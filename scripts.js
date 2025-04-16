@@ -303,7 +303,7 @@ function editCardContent(card, country, imageURL) {
 //
   card.querySelector("h2").textContent = name;
   const img = card.querySelector("img");
-  img.src = imageURL || "placeholder.png";
+  img.src = imageURL || "placeholder.jpg";
   img.alt = `${name} image`;
 
   // Select the strings from the card and set the text content to the country data(climate, languages, currency, popularity, bestTravelSeason)
