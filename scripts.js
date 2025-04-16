@@ -334,7 +334,7 @@ function editCardContent(card, country, imageURL) {
 // the functions and features of the website
 function quoteAlert() {
   alert(
-      "Have you tried filtering the countries? Click the buttons at the top of the page to filter the countries!"
+      "Have you tried filtering the countries? Click the buttons at the top of the page to filter the countries! Also try adding a country of your own with our add new country feature near the bottom of the page!"
   );
 }
 
