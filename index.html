@@ -1,31 +1,80 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
+    <title>African Travel GuidE | Home</title>
+    <meta name="description" content="A Travel Guide for African Americans" />
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="scripts.js"></script>
   </head>
 
   <body>
+
     <header class="main-header">
-      <h1 class="title">LA TV Shows</h1>
+      <img src="https://upload.wikimedia.org/wikipedia/en/f/f5/Emblem_of_the_African_Union.svg" alt="Emblem of the African Union.svg"> 
+      <h1 class="title">African Travel Guide</h1>
+      <div class="button-container">
+      <div class="filter-buttons">
+        <button onclick="filterByPopularity('Very High')">Most Popular</button>
+        <button onclick="filterByClimate('tropical')">Tropical Climate</button>
+        <button onclick="filterByBestSeason('December')">Best in December</button>
+        <button onclick="showCards()">Show All</button>
+      </div>
+      </div>
     </header>
+
     <div id="card-container"></div>
     <div class="card" style="display: none">
       <div class="card-content">
-        <h2>TV Show Title</h2>
-        <img src="" alt="TV Show Poster" />
-        <ul>
-          <li>Bullet Point 1</li>
-          <li>Bullet Point 2</li>
-          <li>Bullet Point 3</li>
-        </ul>
+        <h2>Country Name</h2>
+        <img src="" alt="Country Image" />
+        <div class="country-info">
+          <p><strong>Climate:</strong> <span class="climate"></span></p>
+          <p><strong>Language:</strong> <span class="language"></span></p>
+          <p><strong>Currency:</strong> <span class="currency">USD</span></p>
+          <p><strong>Popularity:</strong> <span class="popularity">High</span></p>
+          <p><strong>Best Travel Seasons:</strong> <span class="seasons"></span></p>
+        </div>
+        <div class="cities">
+          <h3>Major Cities:</h3>
+          <ul class="city-list">
+          </ul>
+        </div>
       </div>
     </div>
+
+    <div id="add-country-form" style="margin: 20px; padding: 20px;">
+      <h3>Add New Country</h3>
+      <form id="countryForm">
+        <input type="text" id="countryName" placeholder="Country Name*" required><br>
+        <input type="text" id="imageUrl" placeholder="Image URL*"><br>
+        <input type="text" id="climate" placeholder="Climate*" required><br>
+        <input type="text" id="languages" placeholder="Languages,*" required><br>
+        <input type="text" id="currency" placeholder="Currency*" required><br>
+        <input type="text" id="currencyToUsd" placeholder="USD to Currnecy*" required><br>
+        <select id="popularity" required>
+          <option value="">Select Popularity</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+          <option value="Very High">Very High</option>
+        </select><br>
+        <input type="text" id="bestTravelSeason" placeholder="Best month(s)," required><br>
+        
+        <div id="cities-container">
+          <h4>Cities</h4>
+          <div class="city-input">
+            <input type="text" class="cityName" placeholder="City Name" required>
+            <input type="text" class="cityAttraction" placeholder="Main Attraction" required>
+            <input type="text" class="cityCost" placeholder="Avg cost per day ($)" required>
+          </div>
+        </div>
+        <button onclick="addNewCountry();">Add Country</button>
+      </form>
+    </div>
+
     <div class="footer">
-      <button onclick="quoteAlert();">Get A Quote!</button>
-      <button onclick="removeLastCard();">Remove A Card!</button>
+      <button onclick="quoteAlert();">Help?</button>
+      <button onclick="removeLastCard();">Remove last Country!</button>
     </div>
   </body>
 </html>
